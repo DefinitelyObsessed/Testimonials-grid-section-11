@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* Roots */
+:root {
+  --clr-violet: hsl(263, 55%, 52%);
+  --clr-light-violet: hsl(263, 56%, 69%);
+  --clr-dark-grayish: hsl(217, 19%, 35%);
+  --clr-dark-blackish: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+  --fw-500: 500;
+  --fw-600: 600;
+  --ff-barlow: 'Barlow Semi Condensed', sans-serif;
+  --fs: 0.8125rem;
+}
+
+/* Main */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-barlow);
+  background-color: var(--clr-light-grayish-blue);
+}
+
+/* Parent Block */
+.parent-block {
+  margin: 12vh auto;
+  width: max(330px, 80vw);
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'one'
+    'two'
+    'three'
+    'four'
+    'five';
+}
+
+.white-text {
+  color: var(--clr-white);
+}
+
+.light-grey-text {
+  color: var(--clr-light-gray);
+}
+
+.grey-text {
+  color: var(--clr-dark-grayish);
+}
+
+img {
+  float: left;
+  width: 2.5rem;
+  border-radius: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-right: 0.7rem;
+}
+
+.block {
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+}
+
+.profile {
+  margin-bottom: 2.2rem;
+  line-height: 0.1;
+}
+
+.daniel-image, .patrick-image {
+  border: solid 3px var(--clr-light-violet);
+}
+
+h3 {
+  font-weight: var(--fw-600);
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-weight: var(--fw-500);
+  font-size: 1rem;
+}
+
+p {
+  font-size: var(--fs);
+}
+
+/* Daniel Block */
+.daniel-block {
+  background-color: var(--clr-violet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top 0 right 20px;
+  background-size: 125px;
+  grid-area: one;
+}
+
+/* Jonathan Block */
+.jonathan-block {
+  background-color: var(--clr-dark-grayish);
+  grid-area: two;
+}
+
+/* Jeanette Block */
+.jeanette-block {
+  background-color: var(--clr-white);
+  grid-area: three;
+}
+
+/* Patrick Block */
+.patrick-block {
+  background-color: var(--clr-dark-blackish);
+  grid-area: four;
+}
+
+/* Kira Block */
+.kira-block {
+  background-color: var(--clr-white);
+  grid-area: five;
+}
+
+/* Responsiveness Section */
+@media (min-width:1300px) {
+  .parent-block {
+    grid-template-areas:
+      'one one two five '
+      'three four four five';
+  }
+
+  .daniel-block {
+    background-position: top 0 right 50px;
+  }
+}
